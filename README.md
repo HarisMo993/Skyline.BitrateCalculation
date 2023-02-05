@@ -19,10 +19,10 @@ Use the programming language at your preference. C# would be an added-value.
 
 ## 🛠️ Installation Steps
 1. Use Visual Studio 2022
-2. Clone the repositorty
+2. Clone the repositorty.
   https://github.com/HarisMo993/Skyline.BitrateCalculation/tree/feature/witout-scl-lib-automation-nuget-package
-3. Before running the project, run Build Solution first because of that they pull all nuget packages included in the project.
-4. This is it project start the project
+3. Before starting the project, run Build Solution first in order to pull all of the nuget packages used in this project.
+4. This is it, we can start the project.
 
 ![2](https://user-images.githubusercontent.com/80532396/216828386-f1537e03-7199-4c1f-b734-e31cac5a289c.PNG)
 
