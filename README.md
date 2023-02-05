@@ -55,6 +55,12 @@ Use the programming language at your preference. C# would be an added-value.
                    }] 
          }" 
          
- - After that when we click Execute we get codes 200 that it went as it should and we have the data printed in json format like on the picture.
+  - After that when we click Execute we get codes 200 that it went as it should and we have the data printed in json format like on the picture.
  
+  ![3](https://user-images.githubusercontent.com/80532396/216831732-f4e98a55-14d9-440a-a978-02838c83d572.PNG)
+
+  - So with this we can see that the post method was executed successfully.
  
+* The second operation we will describle is Read (GetAll method)
+  
+  
