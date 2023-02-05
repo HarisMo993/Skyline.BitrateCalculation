@@ -43,17 +43,17 @@ Use the programming language at your preference. C# would be an added-value.
   
   - In the Example value column, enter json string data like this, for example: 
   
-        "{ <br />
-            \"Device\":\"Arista\", <br />
-            \"Model\":\"X-Video\", <br />
-            \"NIC\":[{ <br />
-                   \"Description\":\"Linksys ABR\", <br />
-                   \"MAC\":\"14:91:82:3C:D6:7D\", <br />
-                   \"Timestamp\":\"2020-03-23T18:25:43.511Z\", <br />
-                   \"Rx\":\"3698574500\", <br />
-                   \"Tx\":\"122558800\" <br />
-                   }] <br />
-         }" <br />
+        "{
+            \"Device\":\"Arista\", 
+            \"Model\":\"X-Video\", 
+            \"NIC\":[{ 
+                   \"Description\":\"Linksys ABR\", 
+                   \"MAC\":\"14:91:82:3C:D6:7D\", 
+                   \"Timestamp\":\"2020-03-23T18:25:43.511Z\", 
+                   \"Rx\":\"3698574500\", 
+                   \"Tx\":\"122558800\" 
+                   }] 
+         }" 
          
  - After that when we click Execute we get codes 200 that it went as it should and we have the data printed in json format like on the picture.
  
