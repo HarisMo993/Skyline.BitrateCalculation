@@ -6,6 +6,7 @@ using Skyline.BitrateCalculation.API.Database;
 using Skyline.BitrateCalculation.API.DTOs;
 using Skyline.BitrateCalculation.API.Models;
 using Skyline.BitrateCalculation.API.Services.IRepository;
+using System.Linq;
 using System.Net;
 
 namespace Skyline.BitrateCalculation.API.Services.Repository
@@ -65,15 +66,42 @@ namespace Skyline.BitrateCalculation.API.Services.Repository
             return returnData;
         }
 
-        public VideoDto UpdateVideo(int id, VideoDto video)
+        public VideoDto UpdateVideo(int id, string json)
         {
-            Video data = _context.Videos.FirstOrDefault(x => x.Id == id);
-            _mapper.Map(video, data);
+            Video data = _context.Videos.Find(id);
+            var existingNic = new NIC();
+            if (data != null)
+            {
+                var dataJson = JsonConvert.DeserializeObject<Video>(json);
+
+                int poolingRate = 2; // Hz
+                foreach (var nic in dataJson.NIC)
+                {
+                    nic.Rx = nic.Rx * 8 / poolingRate;
+                    nic.Tx = nic.Tx * 8 / poolingRate;
+
+                    existingNic = _context.NICs.FirstOrDefault(x => x.MAC == nic.MAC);
+                }
+
+                if (existingNic != null)
+                {
+                    var dataJsonMapping = _mapper.Map<VideoUpdateDto>(dataJson);
+                    _mapper.Map(dataJsonMapping, data);
+                    var nicUpdate = _context.NICs.FirstOrDefault(x => x.Id == existingNic.Id);
+                    _mapper.Map(dataJson.NIC, nicUpdate);
+                    _context.NICs.Update(nicUpdate);
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    var dataJsonMapping = _mapper.Map<VideoDto>(dataJson);
+                    _mapper.Map(dataJsonMapping, data);
+                }
+                _context.Videos.Update(data);
+                _context.SaveChanges();
+            }
+
             var returnData = _mapper.Map<VideoDto>(data);
-
-            _context.Videos.Update(data);
-            _context.SaveChanges();
-
             return returnData;
         }
     }

@@ -44,9 +44,9 @@ namespace Skyline.BitrateCalculation.API.Controllers
         }
 
         [HttpPut("id")]
-        public IActionResult Update(int id, VideoDto video)
+        public IActionResult Update(int id, string json)
         {
-            var data = _videoRepository.UpdateVideo(id, video);
+            var data = _videoRepository.UpdateVideo(id, json);
 
             return Ok(data);
         }

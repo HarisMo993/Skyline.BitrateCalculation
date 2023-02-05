@@ -8,7 +8,7 @@ namespace Skyline.BitrateCalculation.API.Services.IRepository
         IEnumerable<VideoDto> GetAllVideos();
         VideoDto GetVideo(int id);
         VideoDto AddVideo(string json);
-        VideoDto UpdateVideo(int id, VideoDto vide);
+        VideoDto UpdateVideo(int id, string json);
         void DeleteVideo(int id);
     }
 }
