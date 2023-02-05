@@ -37,7 +37,7 @@ Use the programming language at your preference. C# would be an added-value.
   - U - Update
   - D - Delete
 
-* The first operation we will describe is Create (Post method)
+* The first operation we will describe is Create (Post)
 
   ![image](https://user-images.githubusercontent.com/80532396/216829529-c8845453-b772-424d-a47b-e0fade7a1387.png)
   
@@ -61,6 +61,36 @@ Use the programming language at your preference. C# would be an added-value.
 
   - So with this we can see that the post method was executed successfully.
  
-* The second operation we will describle is Read (GetAll method)
+* The second operation we will describle is Read (Get)
   
+  ![image](https://user-images.githubusercontent.com/80532396/216832146-70786a16-8084-4475-ad33-e65b4717d08e.png)
+
+  - As we can see, this operation has no parameters, so we don't have to enter anything, we just need to execute it.
   
+  ![image](https://user-images.githubusercontent.com/80532396/216832214-03649682-d76a-42d3-93b0-cdeff106e83f.png)
+  
+* The third operation is the same as the second, only that here we have to send a parameter to get the data (Get/{id}).
+  
+  ![image](https://user-images.githubusercontent.com/80532396/216832369-b0a95b1b-ebf8-44cd-b60c-f7a431bb89bb.png)
+  
+  ![image](https://user-images.githubusercontent.com/80532396/216832396-bde57c85-f398-4149-8d13-ff7bb192e719.png)
+
+* The fourth operation is update (Put)
+  
+  ![image](https://user-images.githubusercontent.com/80532396/216832547-aa7db7ca-45e9-43a9-b8ad-a4ea31061c2d.png)
+
+  - Update works by sending the parameter and the data we want to change and then executing it like on the picture.
+  
+  ![image](https://user-images.githubusercontent.com/80532396/216832669-836dff90-691c-4b7c-8ea4-8c2344bfbbf9.png)
+  
+  ![image](https://user-images.githubusercontent.com/80532396/216832687-151c51fd-8ca4-4a16-903f-4ce1c0f3daeb.png)
+  
+  - **Note**: Here we have two conditions for the NIC class when we want to update the data for the NIC, if the MAC addresses match, it will update the preceding NIC                 that is in the list, if there is no data in the NIC with the same MAC address, that data will be added to the list.
+
+* Finally the delete operation (Delete)
+
+  ![image](https://user-images.githubusercontent.com/80532396/216832984-e9273932-036a-4231-a942-c137d3e15955.png)
+
+  - Receives one parameter and deletes the data if it finds it.
+  
+  ![image](https://user-images.githubusercontent.com/80532396/216833074-eaabefa6-1680-4cf5-bc73-f0e9a8ca9a3a.png)
