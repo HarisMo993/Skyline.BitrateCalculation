@@ -10,11 +10,11 @@ namespace Skyline.BitrateCalculation.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DeviceNetworkController : ControllerBase
+    public class BirateCalculationController : ControllerBase
     {
         private readonly IVideoRepository _videoRepository;
 
-        public DeviceNetworkController(IVideoRepository videoRepository)
+        public BirateCalculationController(IVideoRepository videoRepository)
         {
             _videoRepository = videoRepository;
         }
@@ -27,7 +27,7 @@ namespace Skyline.BitrateCalculation.API.Controllers
             return Ok(data);
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult GetByDevice(int id) 
         {
             var data = _videoRepository.GetVideo(id);
@@ -43,15 +43,15 @@ namespace Skyline.BitrateCalculation.API.Controllers
             return Ok(data);
         }
 
-        [HttpPut("id")]
-        public IActionResult Update(int id, VideoDto video)
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, [FromBody]string json)
         {
-            var data = _videoRepository.UpdateVideo(id, video);
+            var data = _videoRepository.UpdateVideo(id, json);
 
             return Ok(data);
         }
 
-        [HttpDelete("id")]
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             _videoRepository.DeleteVideo(id);
