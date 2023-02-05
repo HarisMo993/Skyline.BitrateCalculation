@@ -21,7 +21,7 @@ Use the programming language at your preference. C# would be an added-value.
 
 1. Clone the repositorty
   https://github.com/HarisMo993/Skyline.BitrateCalculation/tree/feature/witout-scl-lib-automation-nuget-package
-2. Before run once Build Solution because of that they pull all nuget packages included in the project.
+2. Before running the project, run Build Solution first because of that they pull all nuget packages included in the project.
 3. This is it project start the project
 
 ![2](https://user-images.githubusercontent.com/80532396/216828386-f1537e03-7199-4c1f-b734-e31cac5a289c.PNG)
@@ -32,8 +32,28 @@ Use the programming language at your preference. C# would be an added-value.
 * When the application is opened, we have a display as we can see in the picture above.
 
 * There we have classic CRUD operations written in the ASP.NET Core API project.
-  _ C - Create
-  _ R - Read
-  _ U - Update
-  _ D - Delete
+  - C - Create
+  - R - Read
+  - U - Update
+  - D - Delete
 
+* The first operation we will describe is Create (Post method)
+
+  ![image](https://user-images.githubusercontent.com/80532396/216829529-c8845453-b772-424d-a47b-e0fade7a1387.png)
+  
+  - In the Example value column, enter json string data like this, for example: 
+        `"{`
+            `\"Device\":\"Arista\",`
+            `\"Model\":\"X-Video\",`
+            `\"NIC\":[{`
+                   `\"Description\":\"Linksys ABR\",`
+                   `\"MAC\":\"14:91:82:3C:D6:7D\",`
+                   `\"Timestamp\":\"2020-03-23T18:25:43.511Z\",`
+                   `\"Rx\":\"3698574500\",`
+                   `\"Tx\":\"122558800\"`
+                   `}]`
+         `}"`
+         
+ - After that when we click Execute we get codes 200 that it went as it should and we have the data printed in json format like on the picture.
+ 
+ 
