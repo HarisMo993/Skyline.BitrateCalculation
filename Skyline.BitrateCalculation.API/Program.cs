@@ -17,7 +17,7 @@ namespace Skyline.BitrateCalculation.API
             builder.Services.AddDbContext<BirateCalculationDbContext>(o => o.UseInMemoryDatabase("BirateCalculationDb"));
             builder.Services.AddScoped<IVideoRepository, VideoRepository>();
 
-            builder.Services.AddAutoMapper(typeof(Program));
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

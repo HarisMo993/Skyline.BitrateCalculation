@@ -7,7 +7,6 @@ namespace Skyline.BitrateCalculation.API.Models
         public int Id { get; set; }
         public string Device { get; set; }
         public string Model { get; set; }
-        public int NICId { get; set; }
         public List<NIC> NIC { get; set; }
     }
 }
